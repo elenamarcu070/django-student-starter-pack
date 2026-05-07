@@ -1,0 +1,214 @@
+:root {
+    --dark: #111827;
+    --muted: #6b7280;
+    --light-bg: #f3f4f6;
+    --card-bg: #ffffff;
+    --radius: 24px;
+}
+
+body {
+    background: var(--light-bg);
+    color: var(--dark);
+}
+
+.app-navbar {
+    background: rgba(17, 24, 39, 0.96);
+    backdrop-filter: blur(16px);
+}
+
+.hero-section {
+    padding: 90px 20px;
+    border-radius: 32px;
+    background:
+        radial-gradient(circle at top left, rgba(99, 102, 241, 0.22), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.20), transparent 30%),
+        #ffffff;
+    box-shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: #111827;
+    color: white;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: clamp(42px, 7vw, 72px);
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.hero-subtitle {
+    max-width: 720px;
+    margin: 20px auto 0;
+    color: var(--muted);
+    font-size: 20px;
+}
+
+.feature-card,
+.app-card,
+.resource-card,
+.stat-card,
+.empty-state,
+.resource-hero {
+    background: var(--card-bg);
+    border: 0;
+    border-radius: var(--radius);
+    box-shadow: 0 18px 60px rgba(15, 23, 42, 0.08);
+}
+
+.feature-card {
+    padding: 30px;
+    height: 100%;
+}
+
+.feature-icon {
+    font-size: 36px;
+    margin-bottom: 18px;
+}
+
+.feature-card h5 {
+    font-weight: 800;
+}
+
+.feature-card p {
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    padding: 28px;
+}
+
+.stat-card span {
+    color: var(--muted);
+    display: block;
+    margin-bottom: 12px;
+}
+
+.stat-card strong {
+    font-size: 42px;
+    line-height: 1;
+}
+
+.resource-card {
+    overflow: hidden;
+    height: 100%;
+}
+
+.resource-image {
+    height: 150px;
+    background: #e5e7eb;
+}
+
+.resource-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.resource-placeholder {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        linear-gradient(135deg, #111827, #374151);
+    color: white;
+    font-weight: 700;
+}
+
+.resource-content {
+    padding: 24px;
+}
+
+.resource-description {
+    color: var(--muted);
+    font-size: 14px;
+    min-height: 42px;
+}
+
+.resource-hero {
+    padding: 32px;
+    margin-bottom: 24px;
+}
+
+.slot-legend {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.legend-dot.available {
+    background: #bbf7d0;
+}
+
+.legend-dot.booked {
+    background: #e5e7eb;
+}
+
+.legend-dot.mine {
+    background: #bfdbfe;
+}
+
+.legend-dot.expired {
+    background: #fde68a;
+}
+
+.slot-card {
+    border-radius: 20px;
+    padding: 18px;
+    min-height: 120px;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.slot-available {
+    background: #dcfce7;
+}
+
+.slot-booked {
+    background: #e5e7eb;
+    color: #6b7280;
+}
+
+.slot-mine {
+    background: #dbeafe;
+}
+
+.slot-expired {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px;
+    color: var(--muted);
+}
+
+.app-alert {
+    border: 0;
+    border-radius: 18px;
+}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-header">
+    <div>
+        <p class="text-muted mb-1">Welcome back</p>
+        <h1 class="fw-bold mb-0">
+            Dashboard
+        </h1>
+    </div>
+
+    <a href="/bookings/" class="btn btn-dark">
+        Create Booking
+    </a>
+</div>
+
+<div class="row g-4 mt-2">
+    <div class="col-md-4">
+        <div class="stat-card">
+            <span>Total Locations</span>
+            <strong>{{ total_locations }}</strong>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="stat-card">
+            <span>Available Resources</span>
+            <strong>{{ total_resources }}</strong>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="stat-card">
+            <span>My Active Bookings</span>
+            <strong>{{ my_active_bookings }}</strong>
+        </div>
+    </div>
+</div>
+
+<div class="card app-card mt-4">
+    <div class="card-body">
+        <h5 class="fw-bold mb-3">Recent Activity</h5>
+
+        {% if recent_bookings %}
+            <div class="list-group list-group-flush">
+                {% for booking in recent_bookings %}
+                    <div class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>{{ booking.resource.name }}</strong>
+                            <div class="text-muted small">
+                                {{ booking.resource.location.name }} ·
+                                {{ booking.booking_date }} ·
+                                {{ booking.start_time }} - {{ booking.end_time }}
+                            </div>
+                        </div>
+
+                        <span class="badge bg-dark">
+                            {{ booking.get_status_display }}
+                        </span>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="text-muted mb-0">
+                No bookings yet.
+            </p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

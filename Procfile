@@ -1,0 +1,1 @@
+web: gunicorn django_student_starter.wsgi
